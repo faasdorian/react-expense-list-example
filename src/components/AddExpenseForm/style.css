@@ -1,0 +1,60 @@
+.add-expense-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.add-expense-form__input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #3f3f3f;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.add-expense-form__input label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.add-expense-form__input input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #3f3f3f;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.add-expense-form__input input:focus {
+    outline: none;
+}
+
+.add-expense-form__input input::placeholder {
+    color: #3f3f3f;
+}
+
+.add-expense-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.add-expense-button:hover {
+    background-color: #651ea8;
+}
+
+.add-expense-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.add-expense-button:disabled:hover {
+    background-color: #ccc;
+}

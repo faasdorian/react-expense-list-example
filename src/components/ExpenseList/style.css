@@ -1,0 +1,11 @@
+.expense-list {
+  padding: 1rem;
+  width: 50rem;
+}
+
+.expense-list-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 95%;
+  color: #fff;
+}
