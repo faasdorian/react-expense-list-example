@@ -7,28 +7,46 @@ function App() {
 
   const [expenses, setExpenses] = useState([])
   const [filteredYear, setFilteredYear] = useState('All')
+  const [addExpenseModalOpen, setAddExpenseModalOpen] = useState(false)
 
-  const saveNewExpense = expense => setExpenses(prevExpenses => [expense, ...prevExpenses])
+  const onCancel = () => setAddExpenseModalOpen(false)
+
+  const saveNewExpense = expense => {
+    setExpenses(prevExpenses => [expense, ...prevExpenses])
+    setAddExpenseModalOpen(false)
+  }
 
   const onFilterChange = year => setFilteredYear(year)
 
   return (
     <div className="App">
-      <AddExpenseSection key='add-expense-section' onNewExpense={saveNewExpense} />
       {
-        expenses.length > 0 ?
-          <>
-            <ExpensesFilter
-              key='expense-filter'
-              expenses={expenses}
-              onFilterChange={onFilterChange}
-              selected={filteredYear} />
-            <ExpenseList
-              key='expense-list'
-              expenses={expenses}
-              filteredYear={filteredYear} />
-          </>
-          : <p className='no-expenses' >No expenses found. Try adding some!</p>
+        !addExpenseModalOpen &&
+        <button className='add-expense-button-index' onClick={() => setAddExpenseModalOpen(true)}>Add Expense</button>
+      }
+      {
+        addExpenseModalOpen &&
+        <AddExpenseSection key='add-expense-section'
+          onNewExpense={saveNewExpense}
+          onCancel={onCancel}
+        />
+      }
+      {
+        expenses.length > 0 &&
+        <>
+          <ExpensesFilter
+            key='expense-filter'
+            expenses={expenses}
+            onFilterChange={onFilterChange}
+            selected={filteredYear} /><ExpenseList
+            key='expense-list'
+            expenses={expenses}
+            filteredYear={filteredYear} />
+        </>
+      }
+      {
+        expenses.length === 0 &&
+        <p className='no-expenses' >No expenses found. Try adding some!</p>
       }
     </div>
   );

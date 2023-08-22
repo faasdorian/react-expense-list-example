@@ -4,6 +4,8 @@ import './style.css'
 
 export default function AddExpenseSection(props) {
 
+  const onCancel = () => props.onCancel()
+
   const onNewExpense = expense => {
     const newExpense = {
       ...expense,
@@ -17,7 +19,7 @@ export default function AddExpenseSection(props) {
 
   return (
     <Card className='add-expense-section'>
-      <AddExpenseForm onNewExpense={onNewExpense} />
+      <AddExpenseForm onNewExpense={onNewExpense} onCancel={onCancel} />
     </Card>
   )
 }

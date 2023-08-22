@@ -45,6 +45,7 @@ export default function AddExpenseForm(props) {
         <input type='date' value={date} onChange={onDateChange} />
       </div>
       <button className='add-expense-button' type='submit'>Add</button>
+      <button className='cancel-expense-button' type='button' onClick={() => props.onCancel()}>Cancel</button>
     </form>
   )
 }

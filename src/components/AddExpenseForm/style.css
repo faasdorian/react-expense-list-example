@@ -44,6 +44,7 @@
     color: #fff;
     font-size: 16px;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .add-expense-button:hover {
@@ -57,4 +58,19 @@
 
 .add-expense-button:disabled:hover {
     background-color: #ccc;
+}
+
+.cancel-expense-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cancel-expense-button:hover {
+    background-color: #c82333;
 }
