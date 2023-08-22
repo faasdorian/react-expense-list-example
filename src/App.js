@@ -22,14 +22,19 @@ function App() {
     <div className="App">
       <AddExpenseSection key='add-expense-section' onNewExpense={saveNewExpense} />
       {
-        expenses.length === 0 && <p className='no-expenses' >No expenses found. Try adding some!</p>
-      }
-      {
-        expenses.length > 0 &&
-        <div>
-          <ExpensesFilter key='expense-filter' expenses={expenses} onFilterChange={onFilterChange} selected={filteredYear} />
-          <ExpenseList key='expense-list' expenses={expenses} filteredYear={filteredYear} />
-        </div>
+        expenses.length > 0 ?
+          <>
+            <ExpensesFilter
+              key='expense-filter'
+              expenses={expenses}
+              onFilterChange={onFilterChange}
+              selected={filteredYear} />
+            <ExpenseList
+              key='expense-list'
+              expenses={expenses}
+              filteredYear={filteredYear} />
+          </>
+          : <p className='no-expenses' >No expenses found. Try adding some!</p>
       }
     </div>
   );
