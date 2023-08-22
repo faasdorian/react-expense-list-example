@@ -8,9 +8,7 @@ const ExpensesFilter = (props) => {
     .filter((year, index, years) => years.indexOf(year) === index)
 
 
-  const onFilterChange = event => {
-    props.onFilterChange(event.target.value)
-  }
+  const onFilterChange = event => props.onFilterChange(event.target.value)
 
   return (
     <div className='expenses-filter'>
@@ -19,9 +17,9 @@ const ExpensesFilter = (props) => {
         <select onChange={onFilterChange} value={props.selected} >
           <option value='All'>All</option>
           {
-            expensesDate.map((year, index) => {
-              return <option key={index} value={year}>{year}</option>
-            })
+            expensesDate.map((year, index) =>
+              <option key={index} value={year}>{year}</option>
+            )
           }
         </select>
       </div>

@@ -7,11 +7,11 @@ export default function AddExpenseForm(props) {
   const [price, setPrice] = useState('')
   const [date, setDate] = useState('')
 
-  const onTitleChange = event => { setTitle(event.target.value) }
+  const onTitleChange = event => setTitle(event.target.value)
 
-  const onPriceChange = event => { setPrice(event.target.value) }
+  const onPriceChange = event => setPrice(event.target.value)
 
-  const onDateChange = event => { setDate(event.target.value) }
+  const onDateChange = event => setDate(event.target.value)
 
   function onSubmit(event) {
     event.preventDefault()

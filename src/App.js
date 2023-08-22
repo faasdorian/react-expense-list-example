@@ -8,15 +8,9 @@ function App() {
   const [expenses, setExpenses] = useState([])
   const [filteredYear, setFilteredYear] = useState('All')
 
-  const saveNewExpense = (expense) => {
-    setExpenses((prevExpenses) => {
-      return [expense, ...prevExpenses];
-    });
-  };
+  const saveNewExpense = expense => setExpenses(prevExpenses => [expense, ...prevExpenses])
 
-  const onFilterChange = (year) => {
-    setFilteredYear(year)
-  }
+  const onFilterChange = year => setFilteredYear(year)
 
   return (
     <div className="App">

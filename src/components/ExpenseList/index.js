@@ -12,8 +12,6 @@ export default function ExpenseList(props) {
 
   const average = Number(total / filteredExpenses.length).toFixed(2)
 
-  console.log(filteredExpenses)
-
   return (
     <div className='expense-list-container'>
       <h2>Expense List ({filteredExpenses.length})</h2>
